@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon ./index.js",
+    "ui": "browser-sync start --config bs-config.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,14 @@
   },
   "homepage": "https://github.com/sktedro/chord_recognizer#readme",
   "dependencies": {
-    "numjs": "^0.16.1"
+    "browser-sync": "^2.27.7",
+    "express": "^4.17.2",
+    "fs": "^0.0.1-security",
+    "http": "^0.0.1-security",
+    "node-p5": "^1.0.4",
+    "nodemon": "^2.0.15",
+    "numjs": "^0.16.1",
+    "path": "^0.12.7",
+    "pug": "^3.0.2"
   }
 }
