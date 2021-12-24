@@ -1,14 +1,15 @@
 const express = require("express");
 const path = require("path");
+const app = require("./app.js");
 
-const app = express();
+const application = express();
 const port = process.env.PORT || "3000";
 
 /*
  * View
  */
 
-app.get('/', function(req, res) {
+application.get('/', function(req, res) {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
@@ -16,10 +17,21 @@ app.get('/', function(req, res) {
  * Server
  */
 
-app.listen(port, () => {
+application.listen(port, () => {
   console.log(`Listening to requests on http://localhost:${port}`);
 });
 
-// Also server all files in public/
-app.use(express.static(path.join(__dirname, "public")));
+// Also serve all files in public/
+application.use(express.static(path.join(__dirname, "public")));
+
+/*
+ * Requests
+ */
+
+application.post("/", function(req, res) {
+  console.log(req.body);
+  app.setup();
+  res.send(200);
+  // res.write("SUP");
+});
 
