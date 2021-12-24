@@ -1,0 +1,22 @@
+{
+  "name": "chord_recognizer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sktedro/chord_recognizer.git"
+  },
+  "author": "Patrik Skaloš",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sktedro/chord_recognizer/issues"
+  },
+  "homepage": "https://github.com/sktedro/chord_recognizer#readme",
+  "dependencies": {
+    "numjs": "^0.16.1"
+  }
+}
