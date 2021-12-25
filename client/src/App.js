@@ -1,8 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
 import { useState } from "react";
+import React from 'react';
+import { Line } from 'react-chartjs-2';
 
-let filename;
+
+const data = {
+  labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+  datasets: [
+    {
+      // label: "First dataset",
+      data: [33, 53, 85, 41, 44, 65],
+      // fill: true,
+      // backgroundColor: "rgba(75,192,192,0.2)",
+      // borderColor: "rgba(75,192,192,1)"
+    }
+  ]
+};
 
 function App() {
 
@@ -29,7 +42,6 @@ function App() {
       .then((response) => response.json())
       .then((result) => {
         console.log('Success:', result.message);
-        filename = result.filename;
       })
       .catch((error) => {
         console.error('Error:', error);
@@ -55,6 +67,7 @@ function App() {
         ) : (
           <p>Select a file to show details</p>
         )}
+        {/* <Line data={data} /> */}
     </div>
   );
 }

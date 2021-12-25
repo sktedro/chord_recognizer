@@ -181,14 +181,38 @@ function processAudio(dbRecord){
   for(frame in frames){
     ffts.push(nj.fft(frames[frame]));
   }
-  // console.log(ffts[0]);
-  // console.log(JSON.stringify(ffts[0]));
+
+  // Print the biggest magnitudes of the ffts
+  let sampleRate = dbRecord.sampleRate.data;
+  console.log("FFT index, index of the biggest magnitude, freq, magnitude:");
+  for(let i = 0; i < ffts.length; i++){
+    let index = indexOfMax(ffts[i]);
+    let f = (1 / width) * sampleRate * index;
+    let val = ffts[i].get(index, 0);
+    console.log([i, index, f, val]);
+  }
 
 
   // Pass the data to a NN
   
 
   // Return the chords
+}
+
+function indexOfMax(arr){
+  if(arr.length === 0){
+    return -1;
+  }
+
+  let max = arr.get(0, 0);
+  let index = 0;
+  for(let i = 1; i < arr.shape[0]; i++){
+    if(arr.get(i, 0) > max){
+      max = arr.get(i, 0);
+      index = i;
+    }
+  }
+  return index;
 }
 
 app.post("/api/upload", upload.single("file"), (req, res) => {

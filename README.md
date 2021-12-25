@@ -1,6 +1,7 @@
 # Warning
 
-This project may never be finished.
+This project may never be finished. I am thinking of abandoning it and trying
+it in python (maybe without the GUI), since JS is really not suitable for this.
 
 # Brief
 
