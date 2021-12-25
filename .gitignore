@@ -6,6 +6,7 @@ uploads/
 # dependencies
 node_modules/
 client/node_modules/
+db/node_modules/
 /.pnp
 .pnp.js
 

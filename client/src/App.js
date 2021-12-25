@@ -36,26 +36,6 @@ function App() {
       });
   };
 
-  const processFile = () => {
-    const formData = new FormData();
-
-    fetch(
-      'http://localhost:5000/api/process',
-      {
-        method: 'POST',
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify({ filename: filename})
-      }
-    )
-      .then((response) => response.json())
-      .then((result) => {
-        console.log('Success:', result);
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-      });
-  }
-
   return (
     <div className="App">
       <input type="file" name="file" onChange={changeHandler} />
@@ -75,7 +55,6 @@ function App() {
         ) : (
           <p>Select a file to show details</p>
         )}
-        <button onClick={processFile}>Process the file</button>
     </div>
   );
 }
