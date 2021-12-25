@@ -1,31 +1,49 @@
 {
   "name": "chord_recognizer",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "dev": "nodemon ./index.js",
-    "ui": "browser-sync start --config bs-config.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sktedro/chord_recognizer.git"
-  },
-  "author": "Patrik Skaloš",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/sktedro/chord_recognizer/issues"
-  },
-  "homepage": "https://github.com/sktedro/chord_recognizer#readme",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "browser-sync": "^2.27.7",
-    "express": "^4.17.2",
+    "@babel/core": "^7.16.5",
+    "@babel/preset-env": "^7.16.5",
+    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/user-event": "^13.5.0",
+    "babel-loader": "^8.2.3",
     "fs": "^0.0.1-security",
-    "http": "^0.0.1-security",
-    "node-p5": "^1.0.4",
-    "nodemon": "^2.0.15",
     "numjs": "^0.16.1",
     "path": "^0.12.7",
-    "pug": "^3.0.2"
+    "process": "^0.11.10",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "5.0.0",
+    "url-loader": "^4.1.1",
+    "wav": "^1.0.2",
+    "web-vitals": "^2.1.2",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
