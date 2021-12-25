@@ -27,3 +27,4 @@ To run the server, run 'npm run dev' from the main folder.
 
 To run the client, run 'npm start' from the client folder.
 
+The database client expects a mysql database 'chord_recognizer_db' running.
