@@ -1,13 +1,15 @@
 {
-  "name": "chord_recognizer",
-  "version": "0.1.0",
-  "private": true,
+  "name": "client",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "author": "",
+  "license": "ISC",
+
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
-    "cors": "^2.8.5",
-    "multer": "^1.4.4",
     "path": "^0.12.7",
     "process": "^0.11.10",
     "react": "^17.0.2",
@@ -39,5 +41,7 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+
+  "proxy": "http://localhost:5000"
 }
