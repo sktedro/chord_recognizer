@@ -1,3 +1,5 @@
+const PORT = process.env.PORT || 5000;
+
 /*
  *
  * Setup
@@ -7,11 +9,8 @@
 const express = require("express");
 const cors = require("cors");
 const mysql = require("mysql");
-
 const multer = require("multer");
-
-const PORT = process.env.PORT || 5000;
-
+const nj = require("numjs");
 
 const db = mysql.createConnection({
   host: "localhost",
@@ -27,9 +26,11 @@ db.connect((err) => {
   console.log("Database connected");
 });
 
-
 const upload = multer({ dest: "uploads/" });
+
 const app = express();
+app.use(cors());
+app.use(express.json());
 
 /* 
  *
@@ -89,12 +90,9 @@ function insertData(dbRecord){
 
 /*
  *
- * Server
+ * Server responses
  *
  */
-
-app.use(cors());
-app.use(express.json());
 
 app.get("/api", (req, res) => {
   console.log("a");
@@ -132,6 +130,13 @@ app.post("/api/upload", upload.single("file"), (req, res) => {
     res.json({ message: "File successfully uploaded", filename: req.file.filename });
   }
 });
+
+
+/*
+ *
+ * Listening
+ *
+ */
 
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
